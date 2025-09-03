@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/typescript-node:22
+FROM mcr.microsoft.com/devcontainers/typescript-node:24
 
 # Label the image so it uploads to the project repo from the command line
 LABEL org.opencontainers.image.source=https://github.com/neilenns/clearancelab
