@@ -14,5 +14,5 @@ RUN . /etc/os-release \
 	&& if [ "$(dpkg --print-architecture)" = "amd64" ]; then apt-get install -y mongodb-database-tools; fi \
 	&& apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# Install pnpm
-RUN npm install -g pnpm@10.10.0
+# Install pnpm and safe chain
+RUN npm install -g pnpm@10.15.1 @aikidosec/safe-chain && safe-chain setup
