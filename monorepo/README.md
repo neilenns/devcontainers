@@ -17,6 +17,7 @@ Also, copy the `post-create.sh` file to your `.devcontainer` folder. This will r
 - Pre-commit
 - Python
 - Shell history
+- [Safe-chain](https://github.com/AikidoSec/safe-chain)
 
 ## Installed vscode extensions
 
