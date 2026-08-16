@@ -8,6 +8,9 @@ WORKDIR /home/node
 # Copy only the dependency files
 COPY package.json package-lock.json ./
 
+# Make sure the right version of playwright installs before the browsers get added  
+RUN npm ci
+
 # Install browsers for the repo's Playwright version
 RUN npx playwright install --with-deps chromium
 
