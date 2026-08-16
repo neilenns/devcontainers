@@ -1,7 +1,14 @@
-name: Devcontainer
+name: MobiFlight
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "mobiflight/**"
+  pull_request:
+    paths:
+      - "mobiflight/**"
 
 jobs:
   build:
@@ -31,5 +38,4 @@ jobs:
           imageName: ghcr.io/neilenns/devcontainers/mobiflight
           cacheFrom: ghcr.io/neilenns/devcontainers/mobiflight
           configFile: mobiflight/devcontainer.json
-          refFilterForPush: refs/heads/main
-          push: filter
+          eventFilterForPush: workflow_dispatch

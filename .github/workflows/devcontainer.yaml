@@ -3,7 +3,11 @@ name: Devcontainer
 on:
   push:
     branches: [main]
+    paths:
+      - "monorepo/**"
   pull_request:
+    paths:
+      - "monorepo/**"
 
 jobs:
   build:
