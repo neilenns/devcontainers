@@ -1,4 +1,4 @@
-name: Devcontainer
+name: MobiFlight
 
 on:
   workflow_dispatch:
@@ -31,5 +31,4 @@ jobs:
           imageName: ghcr.io/neilenns/devcontainers/mobiflight
           cacheFrom: ghcr.io/neilenns/devcontainers/mobiflight
           configFile: mobiflight/devcontainer.json
-          refFilterForPush: refs/heads/main
-          push: filter
+          eventFilterForPush: workflow_dispatch
