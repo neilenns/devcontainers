@@ -5,4 +5,4 @@ LABEL org.opencontainers.image.description="Devcontainer image for MobiFlight pr
 
 # Install Playwright and its dependencies
 RUN npm install -g @playwright/test && \
-    npx playwright install --with-deps
+    npx playwright install --with-deps chromium
