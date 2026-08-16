@@ -7,5 +7,5 @@ LABEL org.opencontainers.image.description="Devcontainer image for MobiFlight pr
 USER node
 
 COPY package.json package-lock.json ./
-RUN npm install -g @playwright/test && \
+RUN npm install @playwright/test && \
     npx playwright install --with-deps chromium
