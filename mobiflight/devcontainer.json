@@ -19,7 +19,7 @@
     }
   },
   "features": {
-    "ghcr.io/neilenns/devcontainers-features/zsh:0": {
+    "ghcr.io/neilenns/devcontainer-features/oh-my-zsh:1": {
       "theme": "agnoster",
       "stripWorkspacesFromPrompt": true
     },
