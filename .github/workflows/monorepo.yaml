@@ -1,13 +1,15 @@
-name: Devcontainer
+name: Monorepo
 
 on:
   push:
     branches: [main]
     paths:
       - "monorepo/**"
+      - ".github/workflows/monorepo.yaml"
   pull_request:
     paths:
       - "monorepo/**"
+      - ".github/workflows/monorepo.yaml"
 
 jobs:
   build:

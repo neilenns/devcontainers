@@ -6,9 +6,11 @@ on:
     branches: [main]
     paths:
       - "mobiflight/**"
+      - ".github/workflows/mobiflight.yaml"
   pull_request:
     paths:
       - "mobiflight/**"
+      - ".github/workflows/mobiflight.yaml"
 
 jobs:
   build:
@@ -38,4 +40,5 @@ jobs:
           imageName: ghcr.io/neilenns/devcontainers/mobiflight
           cacheFrom: ghcr.io/neilenns/devcontainers/mobiflight
           configFile: mobiflight/devcontainer.json
-          eventFilterForPush: workflow_dispatch
+          refFilterForPush: refs/heads/main
+          push: filter
