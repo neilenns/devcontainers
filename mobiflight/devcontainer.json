@@ -24,6 +24,7 @@
     "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
   },
   "name": "MobiFlight devcontainer",
+  "postCreateCommand": "npm install",
   "postStartCommand": "npm run dev",
   "remoteUser": "node"
 }
