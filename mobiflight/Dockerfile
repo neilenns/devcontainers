@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/typescript-node:latest AS playwright-install
 
 USER node
+WORKDIR /home/node/app
 
 # Copy only the dependency files
 COPY package.json package-lock.json ./
