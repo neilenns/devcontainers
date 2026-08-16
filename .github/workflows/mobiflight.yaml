@@ -2,6 +2,13 @@ name: MobiFlight
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "mobiflight/**"
+  pull_request:
+    paths:
+      - "mobiflight/**"
 
 jobs:
   build:
