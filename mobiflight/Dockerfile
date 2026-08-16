@@ -1,11 +1,23 @@
+FROM mcr.microsoft.com/devcontainers/typescript-node:latest AS playwright-install
+
+USER node
+WORKDIR /home/node/app
+
+# Copy only the dependency files
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Install browsers for the repo's Playwright version
+RUN npx playwright install --with-deps chromium
+
+# Final image
 FROM mcr.microsoft.com/devcontainers/typescript-node:latest
 
-# Label the image so it uploads to the project repo from the command line
 LABEL org.opencontainers.image.description="Devcontainer image for MobiFlight project"
 
-
-# Install Playwright and its dependencies
 USER node
 
-RUN npm install -g @playwright/test && \
-    npx playwright install --with-deps chromium
+# Copy the installed browsers from the temp stage
+COPY --from=playwright-install /home/node/.cache/ms-playwright /home/node/.cache/ms-playwright
