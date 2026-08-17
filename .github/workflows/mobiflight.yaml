@@ -1,4 +1,4 @@
-name: MobiFlight
+name: Frontend
 
 on:
   workflow_dispatch:
