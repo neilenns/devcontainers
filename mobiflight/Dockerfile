@@ -13,6 +13,9 @@ COPY package.json package-lock.json ./
 # of chromium.  
 RUN npm ci && npx playwright install --with-deps chromium
 
+## Install the devcontainers cli for local development of the devcontainer itself
+RUN npm install -g @devcontainers/cli
+
 # Clean up all the temp files used to get playwright installed
 WORKDIR /home/node
 RUN rm -rf app/ 
