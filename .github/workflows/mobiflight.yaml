@@ -1,4 +1,4 @@
-name: MobiFlight
+name: Frontend
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build devcontainer image
     runs-on: ubuntu-latest
 
     permissions:
